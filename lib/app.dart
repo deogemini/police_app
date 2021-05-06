@@ -5,7 +5,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueAccent[400],
+        backgroundColor: Color(0xff1EA5FC),
         body: Padding(
           padding: EdgeInsets.fromLTRB(20, 40, 20, 0.0),
           child: Column(
