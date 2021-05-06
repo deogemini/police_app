@@ -4,15 +4,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: Color(0xff1EA5FC),
         body: Padding(
           padding: EdgeInsets.fromLTRB(20, 40, 20, 0.0),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20.0),
-              Image(
-                image: AssetImage('assets/policeIcon.png'),
+              SizedBox(height: height / 50),
+              Container(
+                height: 189,
+                width: 144,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/policeIcon.png'),
+                        fit: BoxFit.cover)),
               ),
               Text(
                 'Police Case Management System',
