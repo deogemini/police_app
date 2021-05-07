@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             children: <Widget>[
-              SizedBox(height: height / 50),
+              SizedBox(height: 60),
               Container(
                 height: 189,
                 width: 144,
@@ -28,6 +28,9 @@ class MyApp extends StatelessWidget {
                     height: 5,
                     fontSize: 34,
                     fontFamily: 'sans-serif'),
+              ),
+              SizedBox(
+                height: 70,
               ),
               TextButton(
                 child: Text("Login Here",
