@@ -8,8 +8,7 @@ class MyApp extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: Color(0xff1EA5FC),
-        body: Padding(
-          padding: EdgeInsets.fromLTRB(20, 40, 20, 0.0),
+        body: Center(
           child: Column(
             children: <Widget>[
               SizedBox(height: height / 50),
@@ -22,21 +21,27 @@ class MyApp extends StatelessWidget {
                         fit: BoxFit.cover)),
               ),
               Text(
-                'Police Case Management System',
-                style: TextStyle(color: Colors.white, height: 5, fontSize: 20),
+                'PCMS',
+                style: TextStyle(
+                    color: Colors.white,
+                    height: 5,
+                    fontSize: 34,
+                    fontFamily: 'sans-serif'),
               ),
-              SizedBox(
-                height: 50.0,
-              ),
-              ElevatedButton(
-                style: ButtonStyle(
+              TextButton(
+                  child: Text("Login Here",
+                      style: TextStyle(fontSize: 17, color: Colors.white)),
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.fromLTRB(69, 0, 69, 0)),
                     backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.black)),
-                onPressed: () {},
-                child: Text(
-                  'Login Here',
-                ),
-              ),
+                        MaterialStateProperty.all<Color>(Color(0xff03002E)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14.0),
+                      ),
+                    ),
+                  ))
             ],
           ),
         ));
