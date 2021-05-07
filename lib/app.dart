@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:police_app/loginscreen.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -29,19 +30,26 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'sans-serif'),
               ),
               TextButton(
-                  child: Text("Login Here",
-                      style: TextStyle(fontSize: 17, color: Colors.white)),
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.fromLTRB(69, 0, 69, 0)),
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Color(0xff03002E)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14.0),
-                      ),
+                child: Text("Login Here",
+                    style: TextStyle(fontSize: 17, color: Colors.white)),
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                      EdgeInsets.fromLTRB(69, 0, 69, 0)),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Color(0xff03002E)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14.0),
                     ),
-                  ))
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                },
+              )
             ],
           ),
         ));
