@@ -32,6 +32,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  passwordfield: ^0.0.82
+  flutter_svg: ^0.22.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
