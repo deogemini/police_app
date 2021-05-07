@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             children: <Widget>[
-              SizedBox(height: height / 50),
+              SizedBox(height: 60),
               Container(
                 height: 189,
                 width: 144,
@@ -27,7 +27,11 @@ class MyApp extends StatelessWidget {
                     color: Colors.white,
                     height: 5,
                     fontSize: 34,
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'sans-serif'),
+              ),
+              SizedBox(
+                height: 70,
               ),
               TextButton(
                 child: Text("Login Here",
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
                       MaterialStateProperty.all<Color>(Color(0xff03002E)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14.0),
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
                   ),
                 ),
