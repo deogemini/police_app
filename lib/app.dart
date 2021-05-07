@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
                     color: Colors.white,
                     height: 5,
                     fontSize: 34,
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'sans-serif'),
               ),
               SizedBox(
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
                       MaterialStateProperty.all<Color>(Color(0xff03002E)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14.0),
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
                   ),
                 ),
