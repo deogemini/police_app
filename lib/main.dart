@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:police_app/app.dart';
 
@@ -9,7 +11,32 @@ class App extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Police App',
-      home: MyApp(),
+      home: firstPage(),
+    );
+  }
+}
+
+class firstPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => SplashScreenState();
+}
+
+class SplashScreenState extends State<firstPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    Timer(
+        Duration(seconds: 5),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => MyApp())));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color(0xff1EA5FC),
+      child: Image.asset('assets/policeIcon.png'),
     );
   }
 }
