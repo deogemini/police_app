@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:passwordfield/passwordfield.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:police_app/home.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -87,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
+                MaterialPageRoute(builder: (context) => home()),
               );
             },
           )
