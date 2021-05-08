@@ -42,23 +42,24 @@ class _LoginScreenState extends State<LoginScreen> {
                       icon: Icon(Icons.account_box),
                       hintText: "User Id",
                       border: InputBorder.none))),
-          // Positioned(
-          //     top: 410,
-          //     child: Container(
-          //       margin: EdgeInsets.symmetric(vertical: 10),
-          //       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          //       width: size.width * 0.8,
-          //       decoration: BoxDecoration(
-          //           color: Color(0xffcff7fa),
-          //           borderRadius: BorderRadius.circular(20)),
-          //       child: TextField(
-          //           obscureText: true,
-          //           decoration: InputDecoration(
-          //               icon: Icon(Icons.lock),
-          //               hintText: "Password",
-          //               suffixIcon: Icon(Icons.visibility),
-          //               border: InputBorder.none)),
-          //     )),
+          SizedBox(
+            height: 70,
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            width: size.width * 0.8,
+            decoration: BoxDecoration(
+                color: Color(0xffcff7fa),
+                borderRadius: BorderRadius.circular(20)),
+            child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.lock),
+                    hintText: "Password",
+                    suffixIcon: Icon(Icons.visibility),
+                    border: InputBorder.none)),
+          ),
         ],
       ),
     ));
