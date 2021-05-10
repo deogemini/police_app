@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:police_app/app.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 void main() => runApp(App());
 
@@ -23,20 +24,13 @@ class firstPage extends StatefulWidget {
 
 class SplashScreenState extends State<firstPage> {
   @override
-  void initState() {
-    super.initState();
-
-    Timer(
-        Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => MyApp())));
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xff1EA5FC),
-      child: Image.asset('assets/policeIcon.png'),
+    return new SplashScreen(
+      seconds: 5,
+      navigateAfterSeconds: new MyApp(),
+      image: Image.asset('assets/policeIcon.png'),
+      photoSize: 100.0,
+      loaderColor: Colors.black,
     );
   }
 }
