@@ -9,7 +9,21 @@ class _CasesState extends State<Cases> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Coming Soon'),
-    );
+        body: Stack(
+          children: <Widget>[
+      Opacity(
+        opacity: 0.3,
+        child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+          image: AssetImage(
+            "assets/policeIcon.png",
+          ),
+        ))),
+      ),
+      Container(
+        child: Text("adcnkjsn"),
+      )
+    ]));
   }
 }
