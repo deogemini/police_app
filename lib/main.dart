@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:police_app/app.dart';
 import 'package:splashscreen/splashscreen.dart';
