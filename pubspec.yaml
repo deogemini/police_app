@@ -1,5 +1,5 @@
 name: police_app
-description: A new Flutter app for police
+description: A new android app for police by flutter
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -31,9 +31,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  splashscreen:
 
   passwordfield: ^0.0.82
   flutter_svg: ^0.22.0
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
