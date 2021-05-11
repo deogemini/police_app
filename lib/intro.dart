@@ -22,9 +22,16 @@ class _IntroState extends State<Intro> {
                 )),
               )),
           Container(
+            padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
             child: Text(
-                "A police investigator will use the application to review cases which have been registered in the police station for further police investigation process by using an android phone like taking picture  and  also recording sound and lastly to add content on the cases registered"),
-          ),
+              "What Investigator has to do.",
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          
+          ),  
         ],
       ),
     );
