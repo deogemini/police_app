@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:police_app/loginscreen.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -21,13 +22,37 @@ class _ProfileState extends State<Profile> {
             )),
           )),
       Container(
-        child: Text(
-          'Profile Details Coming Soon',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
+        child: Column(children: <Widget>[
+          Container(
+            child: Text('Profile Details Coming Soon',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                )),
           ),
-        ),
+          TextButton(
+            child: Text("Login Here",
+                style: TextStyle(fontSize: 17, color: Colors.white)),
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all<EdgeInsets>(
+                  EdgeInsets.fromLTRB(69, 0, 69, 0)),
+              backgroundColor:
+                  MaterialStateProperty.all<Color>(Color(0xff03002E)),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+              ),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginScreen()),
+              );
+            },
+          )
+        ]),
       )
     ]));
   }
