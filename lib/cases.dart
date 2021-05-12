@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:police_app/viewcases.dart';
 
 class Cases extends StatefulWidget {
   @override
@@ -33,7 +34,12 @@ class _CasesState extends State<Cases> {
               TextButton(
                 child: const Text(
                     'fwnkfnfkjrnjbefbhhjbjbewbbbfqehbbqbeqbhhqefrbq'),
-                onPressed: () {/* ... */},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => viewCase()),
+                  );
+                },
               ),
             ],
           ),
