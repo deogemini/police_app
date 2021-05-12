@@ -26,6 +26,7 @@ class SplashScreenState extends State<firstPage> {
     return new SplashScreen(
       seconds: 5,
       navigateAfterSeconds: new MyApp(),
+      backgroundColor: Color(0xff1EA5FC),
       image: Image.asset('assets/policeIcon.png'),
       photoSize: 100.0,
       loaderColor: Colors.black,

@@ -3,8 +3,6 @@ import 'package:police_app/intro.dart';
 import 'package:police_app/cases.dart';
 import 'package:police_app/profile.dart';
 
-
-
 class home extends StatefulWidget {
   @override
   _homeState createState() => _homeState();
@@ -31,11 +29,9 @@ class _homeState extends State<home> {
               ],
             ),
           ),
-          body: TabBarView(children: [
-            Intro(),
-            Cases(),
-            Profile()
-          ],),
+          body: TabBarView(
+            children: [Intro(), Cases(), Profile()],
+          ),
         ));
   }
 }
