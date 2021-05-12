@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:police_app/viewcases.dart';
+import 'package:police_app/card.dart';
 
 class Cases extends StatefulWidget {
   @override
@@ -21,30 +21,7 @@ class _CasesState extends State<Cases> {
           ),
         ))),
       ),
-      Container(
-        child: Card(
-            child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          const ListTile(
-            title: Text(
-                '82189291                                        09/12/2020'),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              TextButton(
-                child: const Text(
-                    'fwnkfnfkjrnjbefbhhjbjbewbbbfqehbbqbeqbhhqefrbq'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => viewCase()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ])),
-      )
+      Cards()
     ]));
   }
 }
