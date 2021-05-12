@@ -10,6 +10,7 @@ class _viewCaseState extends State<viewCase> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('Case in detailed'),
         backgroundColor: Color(0xff1EA5FC,
       ),
       
