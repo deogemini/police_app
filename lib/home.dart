@@ -17,6 +17,7 @@ class _homeState extends State<home> {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            title: new Text("Welcome Police Investigator "),
             bottom: TabBar(
               tabs: [
                 Tab(
