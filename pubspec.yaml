@@ -32,10 +32,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   splashscreen:
+  http: ^0.13.3
 
   passwordfield: ^0.0.82
   flutter_svg: ^0.22.0
-  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

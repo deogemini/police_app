@@ -9,12 +9,21 @@ class _viewCaseState extends State<viewCase> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Case in detailed'),
-        backgroundColor: Color(0xff1EA5FC,
+      appBar:AppBar(
+          title: Text('Case in detailed'),
+          backgroundColor: Color(0xff1EA5FC,
+        ),
       ),
-      
-      )
+     body: Stack(children: <Widget>[
+      Opacity(
+        opacity: 0.3,
+        child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+          image: AssetImage(
+            "assets/policeIcon.png",
+          ),
+        ))))])
     );
   }
 }
