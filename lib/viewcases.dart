@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:police_app/home.dart';
 
 class viewCase extends StatefulWidget {
   @override
@@ -60,7 +61,7 @@ class _viewCaseState extends State<viewCase> {
                     child: Container(
                       width: 315,
                       child: Text(
-                        'Mama anamshutumu Mussa kuuza kuku  bila ridhaa jkbjbjb jbjjb jbbjb hvvh mjjbjbjhb hjjhvj jhv hjvjv gcgcggb',
+                        'Mama anamshutumu Mussa kuuza kuku  bila ridhaa yake kwenye duka la nyumbani , inahitajika uchunguzi zaidi kuhusu ukweli wa taarifa hizi kuhusu ushahidi',
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.justify,
                         maxLines: 6,
@@ -91,7 +92,35 @@ class _viewCaseState extends State<viewCase> {
                         width: 300,
                       ),
               ),
+            ),
+            TextButton(
+              child: Text("Send details here",
+                  style: TextStyle(fontSize: 17, color: Colors.white)),
+              style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.fromLTRB(60, 0, 60, 0)),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Color(0xff03002E)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => home()),
+                );
+              },
             )
+            // Padding(
+            //     padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            //     child: TextButton(
+            //       decoration: InputDecoration(
+            //         border: UnderlineInputBorder(),
+
+            //     )),
           ],
         )
       ]),
