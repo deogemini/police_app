@@ -12,7 +12,7 @@ class _viewCaseState extends State<viewCase> {
   final picker = ImagePicker();
 
   Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
 
     setState(() {
       if (pickedFile != null) {
@@ -85,7 +85,11 @@ class _viewCaseState extends State<viewCase> {
               child: Container(
                 child: _image == null
                     ? Text('Image not uploaded')
-                    : Image.file(_image),
+                    : Image.file(
+                        _image,
+                        height: 300,
+                        width: 300,
+                      ),
               ),
             )
           ],
