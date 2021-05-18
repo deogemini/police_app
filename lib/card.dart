@@ -34,12 +34,16 @@ class Cards extends StatelessWidget {
                     children: <Widget>[
                       Padding(
                         padding: EdgeInsets.fromLTRB(14, 7, 14, 0),
-                        child: Text(
-                          'Mama anamshutumu Mussa kuuza kuku  bila ridhaa',
-                          style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.normal,
-                              letterSpacing: -0.33),
+                        child: Container(
+                          width: 315,
+                          child: Text(
+                            'Mama anamshutumu Mussa kuuza kuku  bila ridhaa jkbjbjb jbjjb jbbjb hvvh mjjbjbjhb hjjhvj jhv hjvjv gcgcggb',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.normal,
+                                letterSpacing: -0.33),
+                          ),
                         ),
                       ),
                     ]),
