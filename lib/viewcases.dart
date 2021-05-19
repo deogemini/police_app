@@ -89,8 +89,8 @@ class _viewCaseState extends State<viewCase> {
                       ? Text('Image not uploaded')
                       : Image.file(
                           _image,
-                          height: 300,
-                          width: 300,
+                          height: 280,
+                          width: 700,
                         ),
                 ),
               ),
