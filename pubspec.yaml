@@ -34,6 +34,7 @@ dev_dependencies:
   splashscreen:
   http: ^0.13.3
   image_picker: ^0.7.5
+  flutter_launcher_icons: ^0.9.0
 
   passwordfield: ^0.0.82
   flutter_svg: ^0.22.0
