@@ -21,17 +21,40 @@ class _IntroState extends State<Intro> {
                   ),
                 )),
               )),
-          Container(
-            padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
-            child: Text(
-              "What Investigator has to do.",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w700,
+          Column(
+            children: <Widget>[
+              Row(children: <Widget>[
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
+                  child: Text(
+                    "What Investigator has to do.",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ]),
+              SizedBox(
+                height: 200,
               ),
-            ),
-          
-          ),  
+              Row(children: <Widget>[
+                Container(
+                  padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
+                  child: Text(
+                    "What is PCMS App.",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ]),
+            ],
+          ),
         ],
       ),
     );
