@@ -114,7 +114,7 @@ class _ProfileState extends State<Profile> {
               height: 60,
             ),
             TextButton(
-              child: Text("Login Here",
+              child: Text("Logout here",
                   style: TextStyle(fontSize: 17, color: Colors.white)),
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsets>(
