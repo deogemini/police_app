@@ -44,14 +44,14 @@ class _IntroState extends State<Intro> {
                     padding: EdgeInsets.fromLTRB(30, 7, 22, 0),
                     width: 330,
                     child: Text(
-                      'The investigation officer has to use the PCMS android application by the key functions switch on different tabs of the pages of the android application, At the page of cases the investigator can view case details date, number and small case description and to click the card case to add the investigation using the button send available and last is to see his or her profile.',
+                      'The investigation officer has to use the PCMS android application with the key functions as switch on different tabs of the pages of the android application, At the page of cases the investigator can view case details date, number and case description in short and to click the card case to add the investigation details using the button send available and last is to see his or her profile.',
                       overflow: TextOverflow.visible,
                       textAlign: TextAlign.justify,
                       maxLines: 10,
                       style: TextStyle(
                           height: 1.5,
                           wordSpacing: 3,
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.normal,
                           letterSpacing: 0.3),
                     ),
@@ -86,7 +86,7 @@ class _IntroState extends State<Intro> {
                       style: TextStyle(
                           height: 1.5,
                           wordSpacing: 3,
-                          fontSize: 16,
+                          fontSize: 15,
                           fontWeight: FontWeight.normal,
                           letterSpacing: 0.3),
                     ),
