@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: TextField(
               decoration: InputDecoration(
                   icon: Icon(Icons.account_box),
-                  hintText: "User Id",
+                  hintText: "Username",
                   border: InputBorder.none),
             ),
           ),
