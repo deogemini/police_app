@@ -38,8 +38,28 @@ class _IntroState extends State<Intro> {
                   ),
                 ),
               ]),
+              Row(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(30, 7, 22, 0),
+                    width: 330,
+                    child: Text(
+                      'The investigation officer has to use the PCMS android application by the key functions switch on different tabs of the pages of the android application, At the page of cases the investigator can view case details date, number and small case description and to click the card case to add the investigation using the button send available and last is to see his or her profile.',
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.justify,
+                      maxLines: 10,
+                      style: TextStyle(
+                          height: 1.5,
+                          wordSpacing: 3,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          letterSpacing: 0.3),
+                    ),
+                  )
+                ],
+              ),
               SizedBox(
-                height: 200,
+                height: 10,
               ),
               Row(children: <Widget>[
                 Container(
@@ -53,6 +73,26 @@ class _IntroState extends State<Intro> {
                   ),
                 ),
               ]),
+              Row(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(30, 7, 22, 0),
+                    width: 330,
+                    child: Text(
+                      'This is police case android application is there to be used by the investion officer of the police station to add some contents for the cases assigned to him or to her, the app gives the ability to view case take pictures of the details and send the details to be viewed by other polices on the POLICE CASE MANAGEMENT SYSTEM.',
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.justify,
+                      maxLines: 10,
+                      style: TextStyle(
+                          height: 1.5,
+                          wordSpacing: 3,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          letterSpacing: 0.3),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ],
