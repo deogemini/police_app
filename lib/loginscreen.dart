@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: TextField(
               decoration: InputDecoration(
                   icon: Icon(Icons.account_box),
-                  hintText: "User Id",
+                  hintText: "Username",
                   border: InputBorder.none),
             ),
           ),
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
             height: 90,
           ),
           TextButton(
-            child: Text("Submit",
+            child: Text("Login here",
                 style: TextStyle(
                     fontSize: 17,
                     color: Colors.white,
