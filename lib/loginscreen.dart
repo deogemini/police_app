@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:police_app/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -8,6 +12,31 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
+  bool _isLoading = false;
+
+  signIn(String email, String password) async {
+    var url = Uri.parse("http://pcase-api.herokuapp.com/api/v1/auth/login");
+    SharedPreferences sharedPrefences = await SharedPreferences.getInstance();
+    Map body = {"email": email, "password": password};
+    var jsonResponse;
+    var res = await http.post(url, body: body);
+    if (res.statusCode == 200) {
+      jsonResponse = json.decode(res.body);
+
+      print("Response status: ${res.statusCode}");
+
+      print("Response status: ${res.body}");
+
+      if (jsonResponse != null) {
+        setState(() {
+          _isLoading = false;
+        });
+
+        sharedPrefences.setString("token", jsonResponse["token"]);
+        // Navigator.of(context).pushNamed(routeName)
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
