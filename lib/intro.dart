@@ -44,7 +44,7 @@ class _IntroState extends State<Intro> {
                     padding: EdgeInsets.fromLTRB(30, 7, 22, 0),
                     width: 330,
                     child: Text(
-                      'The investigation officer has to use the PCMS android application with the key functions as switch on different tabs of the pages of the android application, At the page of cases the investigator can view case details date, number and case description in short and to click the card case to add the investigation details using the button send available and last is to see his or her profile.',
+                      'The investigation officer uses the PCMS android application with functions as switch on different tabs of the pages of the android application, At the page of cases the investigator can view case details date, number and case description in short and to click the card case to add the investigation details using the button send available and last to see his or her profile.',
                       overflow: TextOverflow.visible,
                       textAlign: TextAlign.justify,
                       maxLines: 10,
