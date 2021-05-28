@@ -29,7 +29,7 @@ class SplashScreenState extends State<firstPage> {
       backgroundColor: Color(0xff1EA5FC),
       image: Image.asset('assets/policeIcon.png'),
       photoSize: 100.0,
-      loaderColor: Colors.black,
+      loaderColor: Colors.amber,
     );
   }
 }
