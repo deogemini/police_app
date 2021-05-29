@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:police_app/app.dart';
+import 'package:police_app/app_state/login_state.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(App());
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return  MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => LoginState()),    
+        ],
+        child: new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Police App',
       home: firstPage(),
-    );
+    ));
   }
 }
 
