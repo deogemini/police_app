@@ -1,8 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:police_app/app_state/login_state.dart';
+import 'package:police_app/home.dart';
 import 'package:police_app/loginscreen.dart';
+import 'package:provider/provider.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    onLoginStatus();
+  }
+
+  onLoginStatus() async {
+    await Provider.of<LoginState>(context, listen: false).onSetLoginStatus();
+    if (Provider.of<LoginState>(context, listen: false).loginStatus) {
+      return Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => home()),
+          (Route<dynamic> route) => false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // double height = MediaQuery.of(context).size.height;
