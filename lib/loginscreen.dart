@@ -15,6 +15,12 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController passController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
+  bool _passwordVisible;
+
+  @override
+  void initState() {
+    _passwordVisible = false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,47 +75,60 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: passController,
                   obscureText: true,
                   decoration: InputDecoration(
-                      icon: Icon(Icons.lock),
+                      icon: const Padding(
+                          padding: const EdgeInsets.only(top: 7.0),
+                          child: const Icon(Icons.lock)),
                       hintText: "Password",
-                      suffixIcon: Icon(Icons.visibility),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                      _passwordVisible
+                      ?Icons.visibility
+                      :Icons.visibility_off
+                      ),
+                      onPressed:(){
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      }),
                       border: InputBorder.none)),
             ),
             SizedBox(
               height: 90,
             ),
-          loginState.isLoging ? CircularProgressIndicator() :  TextButton(
-                child: Text("Login here",
-                    style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600)),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                      EdgeInsets.fromLTRB(69, 0, 69, 0)),
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Color(0xff03002E)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14.0),
+            loginState.isLoging
+                ? CircularProgressIndicator()
+                : TextButton(
+                    child: Text("Login here",
+                        style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600)),
+                    style: ButtonStyle(
+                      padding: MaterialStateProperty.all<EdgeInsets>(
+                          EdgeInsets.fromLTRB(69, 0, 69, 0)),
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Color(0xff03002E)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14.0),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                onPressed:
-                    emailController.text == "" || passController.text == ""
-                        ? null
-                        : ()async {
-                           await loginState.onLogin(
-                                emailController.text, passController.text);
+                    onPressed:
+                        emailController.text == "" || passController.text == ""
+                            ? null
+                            : () async {
+                                await loginState.onLogin(
+                                    emailController.text, passController.text);
 
-                                if(loginState.isAuth){
-                                    Navigator.of(context).pushAndRemoveUntil(
-           MaterialPageRoute(builder: (BuildContext context) => home()),
-             (Route<dynamic> route) => false);
-                                }
-                                else{
-                                  
-                                }
-                          })
+                                if (loginState.isAuth) {
+                                  Navigator.of(context).pushAndRemoveUntil(
+                                      MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              home()),
+                                      (Route<dynamic> route) => false);
+                                } else {}
+                              })
           ],
         ),
       ));
