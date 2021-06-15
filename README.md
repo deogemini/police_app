@@ -1,6 +1,6 @@
 # police_app
 
-A new android android application for Police
+A new android application for Police investigators
 
 ## About the project
 this project is done under the main goal of the final year project of my computer science studies.
