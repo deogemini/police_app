@@ -96,7 +96,9 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 90,
             ),
             loginState.isLoging
-                ? CircularProgressIndicator()
+                ? LinearProgressIndicator(
+                  backgroundColor: Colors.deepOrange,
+                )
                 : TextButton(
                     child: Text("Login here",
                         style: TextStyle(
