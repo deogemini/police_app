@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:police_app/app_state/login_state.dart';
 import 'package:police_app/home.dart';
@@ -13,8 +11,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
-  bool _isLoading = false;
+  // final _formKey = GlobalKey<FormState>();
+  // bool _isLoading = false;
   bool _passwordVisible;
 
   @override
@@ -127,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (BuildContext context) =>
-                                              home()),
+                                               home()),
                                       (Route<dynamic> route) => false);
                                 } else {}
                               })
