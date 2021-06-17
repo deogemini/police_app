@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:police_app/app_state/login_state.dart';
 import 'package:police_app/home.dart';
@@ -127,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (BuildContext context) =>
-                                              home()),
+                                               home()),
                                       (Route<dynamic> route) => false);
                                 } else {}
                               })
