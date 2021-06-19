@@ -74,6 +74,7 @@ class _CardsState extends State<Cards> {
                     List<caseDetails> data = snapshot.data;
                     // print(data[0].casenumber);
                     return ListView.builder(
+                      itemCount: data.length,
                       itemBuilder: (context, index) {
                         return Card(
                           borderOnForeground: true,
