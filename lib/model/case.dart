@@ -7,6 +7,6 @@ class caseDetails {
 
   caseDetails.fromJson(Map<String, dynamic> json)
       : description = json['description'],
-        casenumber = json['caseNumber'],
+        casenumber = json['status'],
         immediateAction = json['immeadteAction'];
 }
