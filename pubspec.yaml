@@ -35,10 +35,13 @@ dev_dependencies:
   http: ^0.13.3
   image_picker: ^0.7.5
   flutter_launcher_icons: ^0.9.0
+  json_annotation:
   shared_preferences: ^2.0.6
   provider:
   passwordfield: ^0.0.82
   flutter_svg: ^0.22.0
+  build_runner:
+  json_serializable:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
