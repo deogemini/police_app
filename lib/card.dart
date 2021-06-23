@@ -12,7 +12,7 @@ class Cards extends StatefulWidget {
 }
 
 class _CardsState extends State<Cards> {
-  Future<List<caseDetails>> fetchData() async {
+  Future<List<CaseDetails>> fetchData() async {
     final response = await http
         .get(Uri.parse('https://pcase-api.herokuapp.com/api/v1/cases'));
     if (response.statusCode == 200) {
@@ -20,14 +20,14 @@ class _CardsState extends State<Cards> {
       List<dynamic> jsonResponse = map["data"];
       // List jsonResponse = json.decode(response.body);
       return jsonResponse
-          .map((data) => new caseDetails.fromJson(data))
+          .map((data) => new CaseDetails.fromJson(data))
           .toList();
     } else {
       throw Exception('Unexpected error occured!');
     }
   }
 
-  Future<List<caseDetails>> futureData;
+  Future<List<CaseDetails>> futureData;
 
   @override
   void initState() {
@@ -67,11 +67,11 @@ class _CardsState extends State<Cards> {
                 MaterialPageRoute(builder: (context) => viewCase()),
               );
             },
-            child: FutureBuilder<List<caseDetails>>(
+            child: FutureBuilder<List<CaseDetails>>(
                 future: futureData,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    List<caseDetails> data = snapshot.data;
+                    List<CaseDetails> data = snapshot.data;
                     // print(data[0].casenumber);
                     return ListView.builder(
                       itemCount: data.length,
@@ -86,7 +86,7 @@ class _CardsState extends State<Cards> {
                               ListTile(
   
                                   title: Text(
-                                      data[index].casenumber + "                               " + data[index].immediateAction,
+                                      data[index].casenumber,
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,

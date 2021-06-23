@@ -1,12 +1,12 @@
-class caseDetails {
+class CaseDetails {
   String description;
   String casenumber;
   String immediateAction;
 
-  caseDetails({this.casenumber, this.description, this.immediateAction});
+  CaseDetails({this.casenumber, this.description, this.immediateAction});
 
-  caseDetails.fromJson(Map<String, dynamic> json)
+  CaseDetails.fromJson(Map<String, dynamic> json)
       : description = json['description'],
-        casenumber = json['status'],
+        casenumber = json['caseNumber'],
         immediateAction = json['immeadteAction'];
 }
