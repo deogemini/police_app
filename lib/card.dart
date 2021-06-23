@@ -86,7 +86,7 @@ class _CardsState extends State<Cards> {
                               ListTile(
   
                                   title: Text(
-                                      data[index].casenumber + "                               " + data[index].immediateAction,
+                                      data[index].casenumber,
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,
