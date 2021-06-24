@@ -31,60 +31,60 @@ class _viewCaseState extends State<viewCase> {
               ),
             ))),
           ),
-          Column(children: <Widget>[
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(14, 7, 14, 0),
-                    child: Container(
-                      width: 315,
-                      child: Text(
-                        'Mama anamshutumu Mussa kuuza kuku  bila ridhaa yake kwenye duka la nyumbani , inahitajika uchunguzi zaidi kuhusu ukweli wa taarifa hizi kuhusu ushahidi',
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.justify,
-                        maxLines: 6,
-                        style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.normal,
-                            letterSpacing: -0.33),
+          Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(children: <Widget>[
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        width: 315,
+                        child: Text(
+                          'Mama anamshutumu Mussa kuuza kuku  bila ridhaa yake kwenye duka la nyumbani , inahitajika uchunguzi zaidi kuhusu ukweli wa taarifa hizi kuhusu ushahidi',
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.justify,
+                          maxLines: 6,
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.normal,
+                              letterSpacing: -0.33),
+                        ),
                       ),
-                    ),
-                  ),
-                ]),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
+                    ]),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => InvestigationReport()),
-                        );
-                      },
-                      child: Text('Add IR'),
+                    Column(
+                      children: <Widget>[
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => InvestigationReport()),
+                            );
+                          },
+                          child: Text('Add IR'),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        InvestigationReport()),
+                              );
+                            },
+                            child: Text('View IR'))
+                      ],
                     )
                   ],
-                ),
-                Column(
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => InvestigationReport()),
-                          );
-                        },
-                        child: Text('View IR'))
-                  ],
                 )
-              ],
-            )
-          ])
+              ]))
         ])));
   }
 }

@@ -35,38 +35,12 @@ class _CardsState extends State<Cards> {
     futureData = fetchData();
   }
 
-  // Future getUserData() async {
-  //   var res = await http
-  //       .get(Uri.parse('https://pcase-api.herokuapp.com/api/v1/cases'));
 
-  //map the response since it contains array format in json body
-  //   Map<String, dynamic> map = jsonDecode(res.body);
-  //   List<dynamic> jsonData = map["data"];
-  //   print(jsonData);
-
-  //   List<caseDetails> casedetails = [];
-
-  //   for (var u in jsonData) {
-  //     caseDetails casedetail =
-  //         caseDetails(u["description"], u["caseNumber"], u["immeadteAction"]);
-  //     casedetails.add(casedetail);
-
-  //     print(u["name"]);
-  //   }
-  //   print(casedetails.length);
-  //   return casedetails;
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => viewCase()),
-              );
-            },
+       
             child: FutureBuilder<List<CaseDetails>>(
                 future: futureData,
                 builder: (context, snapshot) {
@@ -76,42 +50,47 @@ class _CardsState extends State<Cards> {
                     return ListView.builder(
                       itemCount: data.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          borderOnForeground: true,
-                          shadowColor: Colors.blue,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
+                        return GestureDetector(
+                           onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => viewCase()),
+              );
+            },
+                                                  child: Card(
+                            borderOnForeground: true,
+                            shadowColor: Colors.blue,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              ListTile(
-  
+                              children: <Widget>[
+                                ListTile(
                                   title: Text(
-                                      data[index].casenumber,
+                                    data[index].casenumber == null? 'Loading..':data[index].casenumber,
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,
-                                      ))),
-                              Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.fromLTRB(14, 7, 14, 0),
-                                      child: Container(
-                                        width: 315,
-                                        child: Text(
-                                          data[index].description,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.normal,
-                                              letterSpacing: -0.33),
-                                        ),
-                                      ),
+                                      )),
+                                  trailing: Text(
+                                    data[index].immediateAction,
+                                     style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                      )
                                     ),
-                                  ]),
-                            ],
+                                  subtitle: Text(
+                                    data[index].description,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.normal,
+                                        letterSpacing: -0.33),
+                                  ),
+                                 
+                                ),
+                               
+                              ],
+                            ),
                           ),
                         );
                       },
@@ -121,6 +100,6 @@ class _CardsState extends State<Cards> {
                   }
                   // By default show a loading spinner.
                   return LinearProgressIndicator();
-                })));
+                }));
   }
 }
