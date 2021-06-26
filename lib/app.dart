@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:police_app/app_state/UserState.dart';
 import 'package:police_app/app_state/login_state.dart';
 import 'package:police_app/home.dart';
 import 'package:police_app/loginscreen.dart';
+import 'package:police_app/model/user.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatefulWidget {
@@ -21,6 +23,7 @@ class _MyAppState extends State<MyApp> {
   onLoginStatus() async {
     await Provider.of<LoginState>(context, listen: false).onSetLoginStatus();
     if (Provider.of<LoginState>(context, listen: false).loginStatus) {
+       // case
       return Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (BuildContext context) => home()),
           (Route<dynamic> route) => false);

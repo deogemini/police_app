@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:police_app/app.dart';
+import 'package:police_app/app_state/UserState.dart';
+import 'package:police_app/app_state/caseState.dart';
 import 'package:police_app/app_state/login_state.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +13,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => LoginState()),    
+          ChangeNotifierProvider(create: (_) 
+          => LoginState()),  
+ ChangeNotifierProvider(create: (_) 
+          => CaseState()),  
+ ChangeNotifierProvider(create: (_) 
+          => UserState()),  
+
+          // 
         ],
         child: new MaterialApp(
       debugShowCheckedModeBanner: false,

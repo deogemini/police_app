@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:police_app/app_state/caseState.dart';
 import 'package:police_app/model/case.dart';
 import 'package:police_app/viewcases.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:provider/provider.dart';
 
 class Cards extends StatefulWidget {
   const Cards({Key key}) : super(key: key);
@@ -27,79 +29,79 @@ class _CardsState extends State<Cards> {
     }
   }
 
-  Future<List<CaseDetails>> futureData;
+  void onIniFetch() async {
+    await Provider.of<CaseState>(context, listen: false).onGetCasesLists();
+  }
+
+  // Future<List<CaseDetails>> futureData;
 
   @override
   void initState() {
     super.initState();
-    futureData = fetchData();
+    // futureData = fetchData();
+    onIniFetch();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-       
-            child: FutureBuilder<List<CaseDetails>>(
-                future: futureData,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    List<CaseDetails> data = snapshot.data;
-                    // print(data[0].casenumber);
-                    return ListView.builder(
-                      itemCount: data.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                           onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => viewCase()),
-              );
-            },
-                                                  child: Card(
-                            borderOnForeground: true,
-                            shadowColor: Colors.blue,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                ListTile(
-                                  title: Text(
-                                    data[index].casenumber == null? 'Loading..':data[index].casenumber,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  trailing: Text(
-                                    data[index].immediateAction,
-                                     style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      )
-                                    ),
-                                  subtitle: Text(
-                                    data[index].description,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.normal,
-                                        letterSpacing: -0.33),
-                                  ),
-                                 
-                                ),
-                               
-                              ],
+    return Consumer<CaseState>(
+      builder: (BuildContext context, caseState, child) {
+        List<CaseDetails> data = caseState.caseDetailsLists;
+        return Container(
+            child: ListView.builder(
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () async {
+                      await caseState.onSetCurrentCase(data[index]);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => viewCase()),
+                      );
+                    },
+                    child: Card(
+                      borderOnForeground: true,
+                      shadowColor: Colors.blue,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          ListTile(
+                            title: Text(
+                                data[index].casenumber == null
+                                    ? 'Loading..'
+                                    : data[index].casenumber,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            trailing: Text(
+                              data[index].immediateAction == null?'Not Found':data[index].immediateAction,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            subtitle: Text(
+                              data[index].description,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.normal,
+                                  letterSpacing: -0.33),
                             ),
                           ),
-                        );
-                      },
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text("${snapshot.error}");
-                  }
+                        ],
+                      ),
+                    ),
+                  );
+
                   // By default show a loading spinner.
-                  return LinearProgressIndicator();
-                }));
+                 // return LinearProgressIndicator();
+                }
+                ));
+                
+      },
+      
+    );
   }
 }
