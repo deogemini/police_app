@@ -105,7 +105,7 @@ class _viewCaseState extends State<viewCase> {
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
                           child: Text(
                               singleCase.occupation == null
-                                  ? 'Loading'
+                                  ? 'Data Not Found'
                                   : singleCase.occupation,
                               style: TextStyle(
                                 fontSize: 17,
@@ -120,7 +120,7 @@ class _viewCaseState extends State<viewCase> {
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
                           child: Text(
                               singleCase.nationality == null
-                                  ? 'Loading'
+                                  ? 'Data Not Found'
                                   : singleCase.nationality,
                               style: TextStyle(
                                 fontSize: 17,
@@ -136,7 +136,7 @@ class _viewCaseState extends State<viewCase> {
                           width: 280,
                           child: Text(
                             singleCase.description == null
-                                ? 'Loading'
+                                ? 'Data Not Found'
                                 : singleCase.description,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.justify,
@@ -155,7 +155,7 @@ class _viewCaseState extends State<viewCase> {
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
                           child: Text(
                               singleCase.address == null
-                                  ? 'Loading'
+                                  ? 'Data Not Found'
                                   : singleCase.address,
                               style: TextStyle(
                                 fontSize: 17,
@@ -170,7 +170,7 @@ class _viewCaseState extends State<viewCase> {
                         padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
                         child: Text(
                             singleCase.immediateAction == null
-                                ? 'Loading'
+                                ? 'Data Not Found'
                                 : singleCase.immediateAction,
                             style: TextStyle(
                               fontSize: 17,

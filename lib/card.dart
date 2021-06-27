@@ -69,14 +69,14 @@ class _CardsState extends State<Cards> {
                           ListTile(
                             title: Text(
                                 data[index].casenumber == null
-                                    ? 'Loading..'
+                                    ? 'Data Not Found'
                                     : data[index].casenumber,
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                 )),
                             trailing: Text(
-                              data[index].immediateAction == null?'Not Found':data[index].immediateAction,
+                              data[index].immediateAction == null?'Data Not Found':data[index].immediateAction,
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
