@@ -24,12 +24,12 @@ class HttpService {
   Future<http.Response> httpPost(
       String secondaryUrl, Map<String, dynamic> postData) async {
     var url = Uri.parse(baseUrl + secondaryUrl);
-    headers.addAll({
-      "Authorization":
-          "Bearer " + await PreferenceProvider.getPreferenceValue("token")
-    });
+    // headers.addAll({
+    //   "Authorization":
+    //       "Bearer " + await PreferenceProvider.getPreferenceValue("token")
+    // });
 
-    print(headers);
+    // print(headers);
     http.Response response =
         await http.post(url, headers: headers, body: json.encode(postData));
     return response;

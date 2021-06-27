@@ -1,7 +1,7 @@
 class CaseDetails {
   String id;
   String name;
-  String age;
+  int age;
   String phone;
   String gender;
   String occupation;

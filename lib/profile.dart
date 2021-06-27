@@ -87,7 +87,7 @@ class _ProfileState extends State<Profile> {
                           TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 70.0),
+                      padding: const EdgeInsets.only(left: 37.0),
                       child: Text(
                         user.email,
                         style: TextStyle(

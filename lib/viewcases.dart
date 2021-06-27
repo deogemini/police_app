@@ -75,7 +75,7 @@ class _viewCaseState extends State<viewCase> {
                       Container(
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
                           child: Text(
-                              singleCase.age == null ? 'Loading' : singleCase,
+                              'singleCase.age ',
                               style: TextStyle(
                                 fontSize: 17,
                                 fontWeight: FontWeight.w400,
