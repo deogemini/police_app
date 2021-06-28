@@ -49,7 +49,7 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding: const EdgeInsets.only(left: 110.0),
                       child: Text(
-                        user.name,
+                        user.name == null ? 'No Data Found': user.name ,
                         style: TextStyle(
                             fontWeight: FontWeight.w100, fontSize: 22),
                       ),
@@ -69,7 +69,7 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding: const EdgeInsets.only(left: 120.0),
                       child: Text(
-                        user.title,
+                        user.title  == null ? 'No data Found' :user.title, 
                         style: TextStyle(
                             fontWeight: FontWeight.w100, fontSize: 22),
                       ),
@@ -89,7 +89,7 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding: const EdgeInsets.only(left: 37.0),
                       child: Text(
-                        user.email,
+                        user.email == null ? 'No Data Found' : user.email,
                         style: TextStyle(
                             fontWeight: FontWeight.w100, fontSize: 22),
                       ),
@@ -129,7 +129,7 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding: const EdgeInsets.only(left: 150.0),
                       child: Text(
-                        user.role,
+                        user.role == null ? 'No Data Found' : user.role,
                         style: TextStyle(
                             fontWeight: FontWeight.w100, fontSize: 22),
                       ),
