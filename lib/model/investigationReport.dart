@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-
 class InvestigationReport {
   String id;
   String propertyStolen;
   String photo;
   String court;
   String ifStolenproperty;
-  String categoryOfOfficer;
+  String categoryOfOffence;
   String offence;
+  String description;
+  String caseId;
   String section;
   String remarks;
   String irNumber;
@@ -19,8 +19,10 @@ class InvestigationReport {
     this.photo,
     this.court,
     this.ifStolenproperty,
-    this.categoryOfOfficer,
+    this.categoryOfOffence,
     this.offence,
+    this.description,
+    this.caseId,
     this.section,
     this.remarks,
     this.irNumber,
@@ -32,7 +34,9 @@ class InvestigationReport {
         photo = json['photo'],
         court = json['court'],
         ifStolenproperty = json['ifStolenproperty'],
-        categoryOfOfficer = json['categoryOfOffence'],
+        categoryOfOffence = json['categoryOfOffence'],
+        description = json['description'],
+        caseId = json['case'],
         offence = json['offence'],
         section = json['section'],
         remarks = json['remarks'],
