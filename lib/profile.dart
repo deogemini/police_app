@@ -37,20 +37,33 @@ class _ProfileState extends State<Profile> {
                 ),
               )))),
           SingleChildScrollView(
-                      child: Container(
-                padding: EdgeInsets.fromLTRB(30, 100, 24, 100),
+            child: Container(
+                width: MediaQuery.of(context).size.width / 0.8,
+                padding: EdgeInsets.fromLTRB(30, 80, 24, 100),
                 child: Column(children: <Widget>[
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.blueGrey,
+                    child: Icon(
+                      Icons.person,
+                      size: 100,
+                    ),
+                  ),
+                  SizedBox(
+                   height: MediaQuery.of(context).size.height / 100,
+
+                  ),
                   Row(
                     children: <Widget>[
                       Text(
                         'Name',
-                        style:
-                            TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 22),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 110.0),
                         child: Text(
-                          user.name == null ? 'No Data Found': user.name ,
+                          user.name == null ? 'No Data Found' : user.name,
                           style: TextStyle(
                               fontWeight: FontWeight.w100, fontSize: 22),
                         ),
@@ -64,13 +77,13 @@ class _ProfileState extends State<Profile> {
                     children: <Widget>[
                       Text(
                         'Title',
-                        style:
-                            TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 22),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 120.0),
                         child: Text(
-                          user.title  == null ? 'No data Found' :user.title, 
+                          user.title == null ? 'No data Found' : user.title,
                           style: TextStyle(
                               fontWeight: FontWeight.w100, fontSize: 22),
                         ),
@@ -84,8 +97,8 @@ class _ProfileState extends State<Profile> {
                     children: <Widget>[
                       Text(
                         'Email',
-                        style:
-                            TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 22),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 37.0),
@@ -104,8 +117,8 @@ class _ProfileState extends State<Profile> {
                     children: <Widget>[
                       Text(
                         'Station',
-                        style:
-                            TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 22),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 130.0),
@@ -124,8 +137,8 @@ class _ProfileState extends State<Profile> {
                     children: <Widget>[
                       Text(
                         'Role',
-                        style:
-                            TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 22),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 150.0),

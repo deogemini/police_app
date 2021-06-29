@@ -1,10 +1,8 @@
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:police_app/app_state/caseState.dart';
-import 'package:police_app/home.dart';
 import 'package:police_app/investigationReport.dart';
 import 'package:police_app/model/case.dart';
+import 'package:police_app/viewIR.dart';
 import 'package:provider/provider.dart';
 
 class viewCase extends StatefulWidget {
@@ -74,8 +72,7 @@ class _viewCaseState extends State<viewCase> {
                     children: <Widget>[
                       Container(
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
-                          child: Text(
-                              'singleCase.age ',
+                          child: Text("Age: " + singleCase.age.toString(),
                               style: TextStyle(
                                 fontSize: 17,
                                 fontWeight: FontWeight.w400,
@@ -87,14 +84,17 @@ class _viewCaseState extends State<viewCase> {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
-                        child: Text(
-                            singleCase.gender == null
-                                ? 'Loading'
-                                : singleCase.gender,
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                            )),
+                        child: singleCase.gender == null
+                            ? Text("Gender: " + 'Loading',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                ))
+                            : Text("Gender: " + singleCase.gender,
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                )),
                       )
                     ],
                   ),
@@ -103,14 +103,16 @@ class _viewCaseState extends State<viewCase> {
                       children: <Widget>[
                         Container(
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
-                          child: Text(
-                              singleCase.occupation == null
-                                  ? 'Data Not Found'
-                                  : singleCase.occupation,
-                              style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                              )),
+                          child: singleCase.occupation == null
+                              ? Text("Occupation: " + 'No Data Found',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w400,
+                                  ))
+                              : Text("Occupation: " + singleCase.occupation,
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w400)),
                         ),
                       ]),
                   Row(
@@ -118,14 +120,17 @@ class _viewCaseState extends State<viewCase> {
                       children: <Widget>[
                         Container(
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
-                          child: Text(
-                              singleCase.nationality == null
-                                  ? 'Data Not Found'
-                                  : singleCase.nationality,
-                              style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                              )),
+                          child: singleCase.nationality == null
+                              ? Text("Nationality: " + 'No Data found',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w400,
+                                  ))
+                              : Text("Nationality: " + singleCase.nationality,
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w400,
+                                  )),
                         ),
                       ]),
                   Row(
@@ -134,18 +139,27 @@ class _viewCaseState extends State<viewCase> {
                         Container(
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
                           width: 280,
-                          child: Text(
-                            singleCase.description == null
-                                ? 'Data Not Found'
-                                : singleCase.description,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.justify,
-                            maxLines: 20,
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.33),
-                          ),
+                          child: singleCase.description == null
+                              ? Text(
+                                  "Description: " + 'No Data Found',
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.justify,
+                                  maxLines: 20,
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w400,
+                                      letterSpacing: -0.33),
+                                )
+                              : Text(
+                                  "Description: " + singleCase.description,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.justify,
+                                  maxLines: 20,
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w400,
+                                      letterSpacing: -0.33),
+                                ),
                         ),
                       ]),
                   Row(
@@ -153,14 +167,13 @@ class _viewCaseState extends State<viewCase> {
                     children: <Widget>[
                       Container(
                           padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
-                          child: Text(
-                              singleCase.address == null
-                                  ? 'Data Not Found'
-                                  : singleCase.address,
-                              style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                              )))
+                          child: singleCase.address == null
+                              ? Text("Address: " + 'No Data Found',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w400,
+                                  ))
+                              : Text("Address: " + singleCase.address))
                     ],
                   ),
                   Row(
@@ -168,14 +181,14 @@ class _viewCaseState extends State<viewCase> {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
-                        child: Text(
-                            singleCase.immediateAction == null
-                                ? 'Data Not Found'
-                                : singleCase.immediateAction,
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                            )),
+                        child: singleCase.immediateAction == null
+                            ? Text("Immediate Action: " + 'No Data Found',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                ))
+                            : Text("Immediate Action: " +
+                                singleCase.immediateAction),
                       )
                     ],
                   ),
@@ -206,8 +219,7 @@ class _viewCaseState extends State<viewCase> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            InvestigationReport()),
+                                        builder: (context) => ViewIR()),
                                   );
                                 },
                                 child: Text('View IR'))
