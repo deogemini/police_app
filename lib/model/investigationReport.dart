@@ -1,8 +1,8 @@
 class InvestigationReport {
   String id;
-  String propertyStolen;
+  bool propertyStolen;
   String photo;
-  String court;
+  bool court;
   String ifStolenproperty;
   String categoryOfOffence;
   String offence;

@@ -241,7 +241,7 @@ class _viewCaseState extends State<viewCase> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          InvestigationReport()),
+                                          IR()),
                                 );
                               },
                               child: Text('Add IR'),
@@ -251,7 +251,14 @@ class _viewCaseState extends State<viewCase> {
                         Column(
                           children: [
                             ElevatedButton(
-                                onPressed: () {
+                                onPressed:(
+                                  
+                                ) async {
+
+
+
+                                      await caseState.onGetCasesDetail();
+
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
