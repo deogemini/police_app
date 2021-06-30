@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'package:image_cropper/image_cropper.dart';
 
 class InvestigationForm extends StatefulWidget {
   const InvestigationForm({Key key}) : super(key: key);
@@ -10,12 +11,14 @@ class InvestigationForm extends StatefulWidget {
 }
 
 class _InvestigationFormState extends State<InvestigationForm> {
+  //Active image file
   File _image;
 
   final picker = ImagePicker();
 
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
+//user take images
+  Future getImage(ImageSource source) async {
+    final pickedFile = await picker.getImage(source: source);
 
     setState(() {
       if (pickedFile != null) {
@@ -23,6 +26,24 @@ class _InvestigationFormState extends State<InvestigationForm> {
       } else {
         print('No image selected.');
       }
+    });
+  }
+
+  //cropper image
+  Future<void> _cropImage() async {
+    File cropped = await ImageCropper.cropImage(
+      sourcePath: _image.path,
+    );
+
+    setState(() {
+      _image = cropped ?? _image;
+    });
+  }
+
+  //remove image
+  void _clear() {
+    setState(() {
+      _image = null;
     });
   }
 
@@ -140,6 +161,36 @@ class _InvestigationFormState extends State<InvestigationForm> {
                 SizedBox(
                   height: 60,
                 ),
+                if(_image != null ) ...[
+                  Image.file(_image), 
+                  Row(
+                    children: <Widget>[
+                      FlatButton(
+                        child: Icon(Icons.crop),
+                        onPressed:  _cropImage,),
+                        FlatButton(
+                          child: Icon(Icons.refresh),
+                          onPressed: _clear)
+                    ],
+                  ),
+                  // Uploader(file: _image)
+
+                ],
+                Card(
+                  child: Container(
+                    child: Row(
+                      children: <Widget>[
+                        IconButton(
+                            icon: Icon(Icons.photo_camera),
+                            onPressed: () => getImage(ImageSource.camera)),
+                        IconButton(
+                            icon: Icon(Icons.photo_library),
+                            onPressed: () => getImage(ImageSource.gallery)),
+                      ],
+                    ),
+                  ),
+                ),
+              
                 TextButton(
                   style: ButtonStyle(),
                   child: Text(
