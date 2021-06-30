@@ -33,6 +33,7 @@ dev_dependencies:
     sdk: flutter
   splashscreen:
   http: ^0.13.3
+  image_cropper: ^1.4.1
   image_picker: ^0.7.5
   flutter_launcher_icons: ^0.9.0
   json_annotation:
