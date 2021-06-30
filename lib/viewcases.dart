@@ -53,6 +53,10 @@ class _viewCaseState extends State<viewCase> {
                       )
                     ],
                   ),
+                  Divider(
+                    height: 50,
+                    thickness: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -67,6 +71,10 @@ class _viewCaseState extends State<viewCase> {
                           ))
                     ],
                   ),
+                    Divider(
+                    height: 50,
+                    thickness: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -78,6 +86,10 @@ class _viewCaseState extends State<viewCase> {
                                 fontWeight: FontWeight.w400,
                               )))
                     ],
+                  ),
+                    Divider(
+                    height: 50,
+                    thickness: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,6 +110,10 @@ class _viewCaseState extends State<viewCase> {
                       )
                     ],
                   ),
+                    Divider(
+                    height: 50,
+                    thickness: 10,
+                  ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -115,6 +131,10 @@ class _viewCaseState extends State<viewCase> {
                                       fontWeight: FontWeight.w400)),
                         ),
                       ]),
+                        Divider(
+                    height: 50,
+                    thickness: 10,
+                  ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -133,6 +153,10 @@ class _viewCaseState extends State<viewCase> {
                                   )),
                         ),
                       ]),
+                        Divider(
+                    height: 50,
+                    thickness: 10,
+                  ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -162,6 +186,10 @@ class _viewCaseState extends State<viewCase> {
                                 ),
                         ),
                       ]),
+                        Divider(
+                    height: 50,
+                    thickness: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -175,6 +203,10 @@ class _viewCaseState extends State<viewCase> {
                                   ))
                               : Text("Address: " + singleCase.address))
                     ],
+                  ),
+                    Divider(
+                    height: 50,
+                    thickness: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -191,6 +223,10 @@ class _viewCaseState extends State<viewCase> {
                                 singleCase.immediateAction),
                       )
                     ],
+                  ),
+                    Divider(
+                    height: 50,
+                    thickness: 10,
                   ),
                   Container(
                     padding: EdgeInsets.fromLTRB(16, 20, 17, 0),
