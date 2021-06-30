@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:police_app/model/case.dart';
 import 'package:police_app/model/user.dart';
 import 'package:police_app/service/getUser.dart';
 

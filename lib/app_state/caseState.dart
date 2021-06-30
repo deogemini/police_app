@@ -4,6 +4,8 @@ import 'package:police_app/model/case.dart';
 import 'package:police_app/service/caseService.dart';
 
 class CaseState extends ChangeNotifier {
+  bool _iscaseIsAvailable;
+  bool get caseIsAvailable => _iscaseIsAvailable ?? false;
   CaseDetails _caseDetails;
   List<CaseDetails> _caseDetailsLists;
 
@@ -18,7 +20,6 @@ class CaseState extends ChangeNotifier {
       _investigationReports ?? [];
 
   Future<void> onSetCurrentCase(CaseDetails caseDetail) async {
-    print("in states ");
     print(caseDetail.name);
     _caseDetails = caseDetail;
     notifyListeners();
@@ -30,7 +31,6 @@ class CaseState extends ChangeNotifier {
   }
 
   Future<void> onGetCasesDetail() async {
-    print("in state");
     _investigationReports =
         await CaseService().fetchIndividualData(caseDetails.id);
     notifyListeners();

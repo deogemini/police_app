@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
+import 'package:police_app/investigationForm.dart';
+
 class IR extends StatefulWidget {
   const IR ({ Key key }) : super(key: key);
 
@@ -9,20 +9,7 @@ class IR extends StatefulWidget {
 }
 
 class _IR extends State<IR > {
-   File _image;
-  final picker = ImagePicker();
-
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
-
-    setState(() {
-      if (pickedFile != null) {
-        _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,12 +17,8 @@ class _IR extends State<IR > {
         title: Text('Investigation Report'),
       ),
 
-      body: Center(child: Text('Coming Soon Boss'),),
-      floatingActionButton: FloatingActionButton(
-        onPressed: getImage,
-        tooltip: 'Pick Image',
-        child: Icon(Icons.add_a_photo_rounded),
-      ),
+      body: InvestigationForm()
+       
       
     );
   }

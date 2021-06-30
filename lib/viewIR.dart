@@ -182,6 +182,7 @@ class _ViewIRState extends State<ViewIR> {
                         Text(
                           singleIR.remarks,
                           textAlign: TextAlign.justify,
+                          textDirection: TextDirection.ltr,
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w300),
                         )
