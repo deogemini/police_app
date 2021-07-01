@@ -204,7 +204,7 @@ class _InvestigationFormState extends State<InvestigationForm> {
                   style: ButtonStyle(),
                   child: Text(
                     'Submit',
-                    style: TextStyle(color: Colors.blue, fontSize: 16),
+                    style: TextStyle(color: Colors.black, fontSize: 16),
                   ),
                   onPressed: () {
                     _formKey.currentState.save();

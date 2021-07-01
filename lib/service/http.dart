@@ -7,7 +7,8 @@ class HttpService {
     "Content-Type": "application/json",
     "Accept": "application/json",
   };
-  final String baseUrl = "http://pcase-api.herokuapp.com/";
+  // final String baseUrl = "http://pcase-api.herokuapp.com/";
+  final String baseUrl = "http://34.89.243.136/";
 
   Future<http.Response> httpGet(String secondaryUrl) async {
     var url = Uri.parse(baseUrl + secondaryUrl);
