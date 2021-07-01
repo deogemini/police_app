@@ -59,9 +59,13 @@ class _InvestigationFormState extends State<InvestigationForm> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+
+
   Widget _buildPropertyStolen() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'Hili ndio jibu',
       decoration: InputDecoration(labelText: 'PropertStolen'),
+      
       onChanged: (String value) {
         _propertystolen = value;
       },
@@ -69,7 +73,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildIfStolenPropert() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'Mambo ya moto',
       decoration: InputDecoration(labelText: 'Write Amount if Stolen'),
       onChanged: (String value) {
         _ifstolenproperty = value;
@@ -78,7 +83,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildInvestigationOfficer() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'haya',
       decoration: InputDecoration(labelText: 'investigation officer'),
       onChanged: (String value) {
         _investigationofficer = value;
@@ -87,7 +93,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildCategoryofOffence() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'DUH',
       decoration: InputDecoration(labelText: 'Category of Offence'),
       onChanged: (String value) {
         _categoryofoffence = value;
@@ -96,7 +103,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildOffences() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'haya',
         decoration: InputDecoration(labelText: 'Actual Offence'),
         onChanged: (String value) {
           _offences = value;
@@ -104,7 +112,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildSections() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'duh',
       decoration: InputDecoration(labelText: 'Constituion Section'),
       onChanged: (String value) {
         _sections = value;
@@ -113,7 +122,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildRemarks() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'dah',
       decoration: InputDecoration(labelText: 'Remarks'),
       onChanged: (String value) {
         _remark = value;
@@ -122,7 +132,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildDescriptions() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'duh',
       decoration: InputDecoration(labelText: 'Update Case Description'),
       onChanged: (String value) {
         _descriptions = value;
@@ -131,7 +142,8 @@ class _InvestigationFormState extends State<InvestigationForm> {
   }
 
   Widget _buildCourts() {
-    return TextField(
+    return TextFormField(
+      initialValue: 'mambo',
       decoration: InputDecoration(labelText: 'Status of Court'),
       onChanged: (String value) {
         _court = value;
@@ -161,20 +173,18 @@ class _InvestigationFormState extends State<InvestigationForm> {
                 SizedBox(
                   height: 60,
                 ),
-                if(_image != null ) ...[
-                  Image.file(_image), 
+                if (_image != null) ...[
+                  Image.file(_image),
                   Row(
                     children: <Widget>[
                       FlatButton(
                         child: Icon(Icons.crop),
-                        onPressed:  _cropImage,),
-                        FlatButton(
-                          child: Icon(Icons.refresh),
-                          onPressed: _clear)
+                        onPressed: _cropImage,
+                      ),
+                      FlatButton(child: Icon(Icons.refresh), onPressed: _clear)
                     ],
                   ),
                   // Uploader(file: _image)
-
                 ],
                 Card(
                   child: Container(
@@ -190,8 +200,7 @@ class _InvestigationFormState extends State<InvestigationForm> {
                     ),
                   ),
                 ),
-              
-                TextButton(
+                 ElevatedButton(
                   style: ButtonStyle(),
                   child: Text(
                     'Submit',
