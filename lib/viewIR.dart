@@ -41,14 +41,14 @@ class _ViewIRState extends State<ViewIR> {
                       height: 100,
                     ),
                     Card(
-                      
                         color: Colors.red,
                         child: Column(children: <Widget>[
                           Text(
                             'the case has no Investigation Report',
                             style: TextStyle(
-                              height: 3,
-                                fontSize: 22, fontWeight: FontWeight.w300),
+                                height: 3,
+                                fontSize: 22,
+                                fontWeight: FontWeight.w300),
                           )
                         ])),
                     SizedBox(
@@ -62,8 +62,7 @@ class _ViewIRState extends State<ViewIR> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => viewCase()),
+                            MaterialPageRoute(builder: (context) => viewCase()),
                           );
                         },
                         child: Text(
@@ -246,11 +245,10 @@ class _ViewIRState extends State<ViewIR> {
                   height: 20,
                 ),
                 Card(
-                  color: Colors.lightBlueAccent,
-                  borderOnForeground: true,
-                  shadowColor: Colors.blueGrey,
-                  child: Column(
-                    children: <Widget>[
+                    color: Colors.lightBlueAccent,
+                    borderOnForeground: true,
+                    shadowColor: Colors.blueGrey,
+                    child: Column(children: <Widget>[
                       Row(
                         children: <Widget>[
                           Text(
@@ -282,10 +280,18 @@ class _ViewIRState extends State<ViewIR> {
                             ),
                           ),
                         ],
-                      )
-                    ],
-                  ),
-                ),
+                      ),
+                    ])),
+                TextButton(
+                    style: TextButton.styleFrom(backgroundColor: Colors.lime),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => viewCase()),
+                      );
+                    },
+                    child:
+                        Text('Press here to update the investigation Report'))
               ],
             ),
           ),
