@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:police_app/app_state/caseState.dart';
+import 'package:police_app/investigationForm.dart';
 import 'package:police_app/model/investigationReport.dart';
+import 'package:police_app/viewcases.dart';
 import 'package:provider/provider.dart';
 
 class ViewIR extends StatefulWidget {
@@ -28,27 +30,51 @@ class _ViewIRState extends State<ViewIR> {
       List<InvestigationReport> IRs = caseState.investigationsReports;
       if (IRs.isEmpty) {
         return Scaffold(
-          backgroundColor: Colors.blueAccent.shade50,
-          appBar: AppBar(title: Text('View Investigatino Report'),),
-          body: Container(alignment: Alignment.center,
-          child: Column(children: <Widget>[
-            Card(
-              color: Colors.red,
-              child: Column(children: [
-                Center(
-                  child: Text(
-            'the case has no Investigation Report',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
-          ),
-                ),
-
-              ],),
-
-            )
-
-          ],),
-          ),
-        );
+            appBar: AppBar(
+              title: Text('View Investigatin Report'),
+            ),
+            body: Container(
+                alignment: Alignment.center,
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 100,
+                    ),
+                    Card(
+                      
+                        color: Colors.red,
+                        child: Column(children: <Widget>[
+                          Text(
+                            'the case has no Investigation Report',
+                            style: TextStyle(
+                              height: 3,
+                                fontSize: 22, fontWeight: FontWeight.w300),
+                          )
+                        ])),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextButton(
+                        style: TextButton.styleFrom(
+                          alignment: Alignment.center,
+                          backgroundColor: Colors.green,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => viewCase()),
+                          );
+                        },
+                        child: Text(
+                          'Go back To add new IR',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white),
+                        ))
+                  ],
+                )));
       } else {
         InvestigationReport singleIR = IRs[0];
 
