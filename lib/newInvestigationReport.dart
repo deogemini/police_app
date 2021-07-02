@@ -11,42 +11,6 @@ class NewInvestigationReport extends StatefulWidget {
 }
 
 class _NewInvestigationReport extends State<NewInvestigationReport> {
-  //Active image file
-  File _image;
-
-  final picker = ImagePicker();
-
-//user take images
-  Future getImage(ImageSource source) async {
-    final pickedFile = await picker.getImage(source: source);
-
-    setState(() {
-      if (pickedFile != null) {
-        _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
-
-  //cropper image
-  Future<void> _cropImage() async {
-    File cropped = await ImageCropper.cropImage(
-      sourcePath: _image.path,
-    );
-
-    setState(() {
-      _image = cropped ?? _image;
-    });
-  }
-
-  //remove image
-  void _clear() {
-    setState(() {
-      _image = null;
-    });
-  }
-
   String _propertystolen;
   String _ifstolenproperty;
   String _investigationofficer;
@@ -59,13 +23,10 @@ class _NewInvestigationReport extends State<NewInvestigationReport> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-
-
   Widget _buildPropertyStolen() {
     return TextFormField(
       initialValue: 'Hili ndio jibu',
       decoration: InputDecoration(labelText: 'PropertStolen'),
-      
       onChanged: (String value) {
         _propertystolen = value;
       },
@@ -104,7 +65,7 @@ class _NewInvestigationReport extends State<NewInvestigationReport> {
 
   Widget _buildOffences() {
     return TextFormField(
-      initialValue: 'haya',
+        initialValue: 'haya',
         decoration: InputDecoration(labelText: 'Actual Offence'),
         onChanged: (String value) {
           _offences = value;
@@ -153,67 +114,44 @@ class _NewInvestigationReport extends State<NewInvestigationReport> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.all(24),
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _buildPropertyStolen(),
-                _buildInvestigationOfficer(),
-                _buildCategoryofOffence(),
-                _buildCourts(),
-                _buildDescriptions(),
-                _buildRemarks(),
-                _buildSections(),
-                _buildOffences(),
-                _buildIfStolenPropert(),
-                SizedBox(
-                  height: 60,
-                ),
-                if (_image != null) ...[
-                  Image.file(_image),
-                  Row(
-                    children: <Widget>[
-                      FlatButton(
-                        child: Icon(Icons.crop),
-                        onPressed: _cropImage,
-                      ),
-                      FlatButton(child: Icon(Icons.refresh), onPressed: _clear)
-                    ],
-                  ),
-                  // Uploader(file: _image)
-                ],
-                Card(
-                  child: Container(
-                    child: Row(
-                      children: <Widget>[
-                        IconButton(
-                            icon: Icon(Icons.photo_camera),
-                            onPressed: () => getImage(ImageSource.camera)),
-                        IconButton(
-                            icon: Icon(Icons.photo_library),
-                            onPressed: () => getImage(ImageSource.gallery)),
-                      ],
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Add New Investigation Report'),
+        ),
+        body: Container(
+            margin: EdgeInsets.all(24),
+            child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    _buildPropertyStolen(),
+                    _buildInvestigationOfficer(),
+                    _buildCategoryofOffence(),
+                    _buildCourts(),
+                    _buildDescriptions(),
+                    _buildRemarks(),
+                    _buildSections(),
+                    _buildOffences(),
+                    _buildIfStolenPropert(),
+                    SizedBox(
+                      height: 60,
                     ),
-                  ),
+                    ElevatedButton(
+                      style: ButtonStyle(),
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                      onPressed: () {
+                        _formKey.currentState.save();
+                        print(_propertystolen);
+                      },
+                    )
+                  ],
                 ),
-                 ElevatedButton(
-                  style: ButtonStyle(),
-                  child: Text(
-                    'Submit',
-                    style: TextStyle(color: Colors.black, fontSize: 16),
-                  ),
-                  onPressed: () {
-                    _formKey.currentState.save();
-                    print(_propertystolen);
-                  },
-                )
-              ],
-            ),
-          ),
-        ));
+              ),
+            )));
   }
 }
