@@ -30,6 +30,7 @@ class _ViewIRState extends State<ViewIR> {
       List<InvestigationReport> IRs = caseState.investigationsReports;
       if (IRs.isEmpty) {
         return Scaffold(
+          backgroundColor: Colors.grey[350],
             appBar: AppBar(
               title: Text('View Investigatin Report'),
             ),
@@ -47,7 +48,7 @@ class _ViewIRState extends State<ViewIR> {
                             'the case has no Investigation Report',
                             style: TextStyle(
                                 height: 3,
-                                fontSize: 22,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w300),
                           )
                         ])),
@@ -79,220 +80,227 @@ class _ViewIRState extends State<ViewIR> {
 
         return Scaffold(
           appBar: AppBar(title: Text('View Investigation Report')),
-          body: Container(
-            alignment: Alignment.center,
-            width: 350,
-            child: ListView(
-              children: <Widget>[
-                SizedBox(
-                  height: 20,
-                ),
-                Card(
-                  color: Colors.lightBlueAccent,
-                  borderOnForeground: true,
-                  shadowColor: Colors.blueGrey,
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            'Investigation Report Number',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                      Divider(
-                        color: Colors.black38,
-                        endIndent: 0.5,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            singleIR.irNumber.toString(),
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w300),
-                          )
-                        ],
-                      )
-                    ],
+          body: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Container(
+              alignment: Alignment.center,
+              width: 350,
+              child: ListView(
+                children: <Widget>[
+                  SizedBox(
+                    height: 20,
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Card(
-                  color: Colors.lightBlueAccent,
-                  borderOnForeground: true,
-                  shadowColor: Colors.blueGrey,
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            'Category of offence',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                      Divider(
-                        color: Colors.black38,
-                        endIndent: 0.5,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            singleIR.categoryOfOffence,
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w300),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Card(
-                  color: Colors.lightBlueAccent,
-                  borderOnForeground: true,
-                  shadowColor: Colors.blueGrey,
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            'Law Section',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                      Divider(
-                        color: Colors.black38,
-                        endIndent: 0.5,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            singleIR.remarks,
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w300),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Card(
-                  color: Colors.lightBlueAccent,
-                  borderOnForeground: true,
-                  shadowColor: Colors.blueGrey,
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            'Remarks',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                      Divider(
-                        color: Colors.black38,
-                        endIndent: 0.5,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            singleIR.remarks,
-                            textAlign: TextAlign.justify,
-                            textDirection: TextDirection.ltr,
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w300),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Card(
-                    color: Colors.lightBlueAccent,
+                  Card(
+                    // color: Colors.lightBlueAccent,
                     borderOnForeground: true,
                     shadowColor: Colors.blueGrey,
-                    child: Column(children: <Widget>[
-                      Row(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Column(
                         children: <Widget>[
-                          Text(
-                            'Case Description',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w500),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'Investigation Report Number',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  
+                                    fontSize: 18, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Divider(
+                            color: Colors.black38,
+                            endIndent: 0.5,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                singleIR.irNumber.toString(),
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    fontSize: 17, fontWeight: FontWeight.w300),
+                              )
+                            ],
                           )
                         ],
                       ),
-                      Divider(
-                        color: Colors.black38,
-                        endIndent: 0.5,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Text(
-                              singleIR.description,
-                              textAlign: TextAlign.justify,
-                              maxLines: 7,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Card(
+                    // color: Colors.lightBlueAccent,
+                    borderOnForeground: true,
+                    shadowColor: Colors.blueGrey,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              'Category of offence',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w300,
+                                  fontSize: 18, fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
+                        Divider(
+                          color: Colors.black38,
+                          endIndent: 0.5,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              singleIR.categoryOfOffence,
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w300),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Card(
+                    // color: Colors.lightBlueAccent,
+                    borderOnForeground: true,
+                    shadowColor: Colors.blueGrey,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              'Law Section',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
+                        Divider(
+                          color: Colors.black38,
+                          endIndent: 0.5,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              singleIR.remarks,
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w300),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Card(
+                    // color: Colors.lightBlueAccent,
+                    borderOnForeground: true,
+                    shadowColor: Colors.blueGrey,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              'Remarks',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
+                        Divider(
+                          color: Colors.black38,
+                          endIndent: 0.5,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              singleIR.remarks,
+                              textAlign: TextAlign.justify,
+                              textDirection: TextDirection.ltr,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w300),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Card(
+                      // color: Colors.lightBlueAccent,
+                      borderOnForeground: true,
+                      shadowColor: Colors.blueGrey,
+                      child: Column(children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              'Case Description',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
+                        Divider(
+                          color: Colors.black38,
+                          endIndent: 0.5,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                singleIR.description,
+                                textAlign: TextAlign.justify,
+                                maxLines: 7,
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ])),
-                TextButton(
-                    style: TextButton.styleFrom(backgroundColor: Colors.lime),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => viewCase()),
-                      );
-                    },
-                    child:
-                        Text('Press here to update the investigation Report'))
-              ],
+                          ],
+                        ),
+                      ])),
+                  TextButton(
+                      style: TextButton.styleFrom(backgroundColor: Colors.lime),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => viewCase()),
+                        );
+                      },
+                      child:
+                          Text('Press here to update the investigation Report'))
+                ],
+              ),
             ),
           ),
         );
