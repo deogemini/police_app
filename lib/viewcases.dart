@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:police_app/app_state/caseState.dart';
 import 'package:police_app/investigationReport.dart';
 import 'package:police_app/model/case.dart';
+import 'package:police_app/newInvestigationReport.dart';
 import 'package:police_app/viewIR.dart';
 import 'package:provider/provider.dart';
 
@@ -241,7 +242,7 @@ class _viewCaseState extends State<viewCase> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => IR()),
+                                        builder: (context) => NewInvestigationReport()),
                                   );
                                 },
                                 child: Text('Add IR'),

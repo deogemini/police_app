@@ -294,7 +294,7 @@ class _ViewIRState extends State<ViewIR> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => viewCase()),
+                          MaterialPageRoute(builder: (context) => InvestigationForm()),
                         );
                       },
                       child:

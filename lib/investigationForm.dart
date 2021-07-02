@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 
+import 'package:police_app/componets/sendimage.dart';
+
 class InvestigationForm extends StatefulWidget {
   const InvestigationForm({Key key}) : super(key: key);
 
@@ -25,98 +27,119 @@ class _InvestigationFormState extends State<InvestigationForm> {
 
 
   Widget _buildPropertyStolen() {
-    return TextFormField(
-      initialValue: 'Hili ndio jibu',
-      decoration: InputDecoration(labelText: 'PropertStolen'),
-      
-      onChanged: (String value) {
-        _propertystolen = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'Hili ndio jibu',
+        decoration: InputDecoration(labelText: 'PropertStolen'),
+        
+        onChanged: (String value) {
+          _propertystolen = value;
+        },
+      ),
     );
   }
 
   Widget _buildIfStolenPropert() {
-    return TextFormField(
-      initialValue: 'Mambo ya moto',
-      decoration: InputDecoration(labelText: 'Write Amount if Stolen'),
-      onChanged: (String value) {
-        _ifstolenproperty = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'Mambo ya moto',
+        decoration: InputDecoration(labelText: 'Write Amount if Stolen'),
+        onChanged: (String value) {
+          _ifstolenproperty = value;
+        },
+      ),
     );
   }
 
   Widget _buildInvestigationOfficer() {
-    return TextFormField(
-      initialValue: 'haya',
-      decoration: InputDecoration(labelText: 'investigation officer'),
-      onChanged: (String value) {
-        _investigationofficer = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'haya',
+        decoration: InputDecoration(labelText: 'investigation officer'),
+        onChanged: (String value) {
+          _investigationofficer = value;
+        },
+      ),
     );
   }
 
   Widget _buildCategoryofOffence() {
-    return TextFormField(
-      initialValue: 'DUH',
-      decoration: InputDecoration(labelText: 'Category of Offence'),
-      onChanged: (String value) {
-        _categoryofoffence = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'DUH',
+        decoration: InputDecoration(labelText: 'Category of Offence'),
+        onChanged: (String value) {
+          _categoryofoffence = value;
+        },
+      ),
     );
   }
 
   Widget _buildOffences() {
-    return TextFormField(
-      initialValue: 'haya',
-        decoration: InputDecoration(labelText: 'Actual Offence'),
-        onChanged: (String value) {
-          _offences = value;
-        });
+    return Container(
+      child: TextFormField(
+        initialValue: 'haya',
+          decoration: InputDecoration(labelText: 'Actual Offence'),
+          onChanged: (String value) {
+            _offences = value;
+          }),
+    );
   }
 
   Widget _buildSections() {
-    return TextFormField(
-      initialValue: 'duh',
-      decoration: InputDecoration(labelText: 'Constituion Section'),
-      onChanged: (String value) {
-        _sections = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'duh',
+        decoration: InputDecoration(labelText: 'Constituion Section'),
+        onChanged: (String value) {
+          _sections = value;
+        },
+      ),
     );
   }
 
   Widget _buildRemarks() {
-    return TextFormField(
-      initialValue: 'dah',
-      decoration: InputDecoration(labelText: 'Remarks'),
-      onChanged: (String value) {
-        _remark = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'dah',
+        decoration: InputDecoration(labelText: 'Remarks'),
+        onChanged: (String value) {
+          _remark = value;
+        },
+      ),
     );
   }
 
   Widget _buildDescriptions() {
-    return TextFormField(
-      initialValue: 'duh',
-      decoration: InputDecoration(labelText: 'Update Case Description'),
-      onChanged: (String value) {
-        _descriptions = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'duh',
+        decoration: InputDecoration(labelText: 'Update Case Description'),
+        onChanged: (String value) {
+          _descriptions = value;
+        },
+      ),
     );
   }
 
   Widget _buildCourts() {
-    return TextFormField(
-      initialValue: 'mambo',
-      decoration: InputDecoration(labelText: 'Status of Court'),
-      onChanged: (String value) {
-        _court = value;
-      },
+    return Container(
+      child: TextFormField(
+        initialValue: 'mambo',
+        decoration: InputDecoration(labelText: 'Status of Court'),
+        onChanged: (String value) {
+          _court = value;
+        },
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      appBar: AppBar(title: Text('Edit Investigation Report'),),
+      body:
+    Container(
         margin: EdgeInsets.all(24),
         child: Form(
           key: _formKey,
@@ -147,10 +170,13 @@ class _InvestigationFormState extends State<InvestigationForm> {
                     _formKey.currentState.save();
                     print(_propertystolen);
                   },
-                )
+                ),
+
+                ImageSend()
+
               ],
             ),
           ),
-        ));
+      )  ));
   }
 }
