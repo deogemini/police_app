@@ -11,7 +11,6 @@ class InvestigationForm extends StatefulWidget {
 }
 
 class _InvestigationFormState extends State<InvestigationForm> {
-
   String _propertystolen;
   String _ifstolenproperty;
   String _investigationofficer;
@@ -24,14 +23,11 @@ class _InvestigationFormState extends State<InvestigationForm> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-
-
   Widget _buildPropertyStolen() {
     return Container(
       child: TextFormField(
         initialValue: 'Hili ndio jibu',
         decoration: InputDecoration(labelText: 'PropertStolen'),
-        
         onChanged: (String value) {
           _propertystolen = value;
         },
@@ -78,7 +74,7 @@ class _InvestigationFormState extends State<InvestigationForm> {
   Widget _buildOffences() {
     return Container(
       child: TextFormField(
-        initialValue: 'haya',
+          initialValue: 'haya',
           decoration: InputDecoration(labelText: 'Actual Offence'),
           onChanged: (String value) {
             _offences = value;
@@ -137,46 +133,44 @@ class _InvestigationFormState extends State<InvestigationForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Edit Investigation Report'),),
-      body:
-    Container(
-        margin: EdgeInsets.all(24),
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _buildPropertyStolen(),
-                _buildInvestigationOfficer(),
-                _buildCategoryofOffence(),
-                _buildCourts(),
-                _buildDescriptions(),
-                _buildRemarks(),
-                _buildSections(),
-                _buildOffences(),
-                _buildIfStolenPropert(),
-                SizedBox(
-                  height: 60,
+        appBar: AppBar(
+          title: Text('Edit Investigation Report'),
+        ),
+        body: Container(
+            margin: EdgeInsets.all(24),
+            child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    _buildPropertyStolen(),
+                    _buildInvestigationOfficer(),
+                    _buildCategoryofOffence(),
+                    _buildCourts(),
+                    _buildDescriptions(),
+                    _buildRemarks(),
+                    _buildSections(),
+                    _buildOffences(),
+                    _buildIfStolenPropert(),
+                    SizedBox(
+                      height: 60,
+                    ),
+                    ElevatedButton(
+                      style: ButtonStyle(),
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                      onPressed: () {
+                        _formKey.currentState.save();
+                        print(_propertystolen);
+                      },
+                    ),
+                    ImageSend()
+                  ],
                 ),
-              
-                 ElevatedButton(
-                  style: ButtonStyle(),
-                  child: Text(
-                    'Submit',
-                    style: TextStyle(color: Colors.black, fontSize: 16),
-                  ),
-                  onPressed: () {
-                    _formKey.currentState.save();
-                    print(_propertystolen);
-                  },
-                ),
-
-                ImageSend()
-
-              ],
-            ),
-          ),
-      )  ));
+              ),
+            )));
   }
 }
