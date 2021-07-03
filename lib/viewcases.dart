@@ -242,7 +242,8 @@ class _viewCaseState extends State<viewCase> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => NewInvestigationReport()),
+                                        builder: (context) =>
+                                            NewInvestigationReport( caseId: singleCase.id,)),
                                   );
                                 },
                                 child: Text('Add IR'),
@@ -271,10 +272,9 @@ class _viewCaseState extends State<viewCase> {
             ])));
       } else {
         return Center(
-          child: CircularProgressIndicator(
+            child: CircularProgressIndicator(
           color: Colors.amber,
-          )
-        );
+        ));
       }
     });
   }

@@ -1,8 +1,8 @@
 class InvestigationReport {
   String id;
-  bool propertyStolen;
+  // bool propertyStolen;
   String photo;
-  bool court;
+  // bool court;
   String ifStolenproperty;
   String categoryOfOffence;
   String offence;
@@ -15,9 +15,9 @@ class InvestigationReport {
   //constructor
   InvestigationReport({
     this.id,
-    this.propertyStolen,
+    // this.propertyStolen,
     this.photo,
-    this.court,
+    // this.court,
     this.ifStolenproperty,
     this.categoryOfOffence,
     this.offence,
@@ -30,9 +30,9 @@ class InvestigationReport {
 
   InvestigationReport.fromJson(Map<String, dynamic> json)
       : id = json['id'],
-        propertyStolen = json['propertyStolen'],
+        // propertyStolen = json['propertyStolen'],
         photo = json['photo'],
-        court = json['court'],
+        // court = json['court'],
         ifStolenproperty = json['ifStolenproperty'],
         categoryOfOffence = json['categoryOfOffence'],
         description = json['description'],
