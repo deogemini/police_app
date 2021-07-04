@@ -62,6 +62,7 @@ class _InvestigationFormState extends State<InvestigationForm> {
       decoration: InputDecoration(labelText: 'Actual Offence'),
       controller: _offences,
     ));
+    
   }
 
   Widget _buildSections() {
