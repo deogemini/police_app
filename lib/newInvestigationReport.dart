@@ -21,7 +21,6 @@ class _NewInvestigationReport extends State<NewInvestigationReport> {
   TextEditingController descriptions = TextEditingController();
   TextEditingController court = TextEditingController();
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Widget _buildPropertyStolen() {
     return TextFormField(
