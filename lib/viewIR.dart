@@ -32,7 +32,7 @@ class _ViewIRState extends State<ViewIR> {
         return Scaffold(
           backgroundColor: Colors.grey[350],
             appBar: AppBar(
-              title: Text('View Investigatin Report'),
+              title: Text('View Investigation Report'),
             ),
             body: Container(
                 alignment: Alignment.center,
