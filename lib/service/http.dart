@@ -35,4 +35,17 @@ class HttpService {
         await http.post(url, headers: headers, body: json.encode(postData));
     return response;
   }
+
+  //put request
+
+  Future<http.Response> httpPut(
+      String secondaryUrl, Map<String, dynamic> putData) async {
+    var url = Uri.parse(baseUrl + secondaryUrl);
+    headers.addAll({
+      "Authorization":
+          "Bearer " + await PreferenceProvider.getPreferenceValue("token")
+    });
+    http.Response response = await http.put(url);
+    return response;
+  }
 }

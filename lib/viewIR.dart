@@ -16,7 +16,6 @@ class _ViewIRState extends State<ViewIR> {
   @override
   void initState() {
     super.initState();
-    // onInit();
   }
 
   void onInit() async {
@@ -91,7 +90,6 @@ class _ViewIRState extends State<ViewIR> {
                     height: 20,
                   ),
                   Card(
-                    // color: Colors.lightBlueAccent,
                     borderOnForeground: true,
                     shadowColor: Colors.blueGrey,
                     child: Padding(
@@ -134,7 +132,6 @@ class _ViewIRState extends State<ViewIR> {
                     height: 20,
                   ),
                   Card(
-                    // color: Colors.lightBlueAccent,
                     borderOnForeground: true,
                     shadowColor: Colors.blueGrey,
                     child: Column(
@@ -173,7 +170,6 @@ class _ViewIRState extends State<ViewIR> {
                     height: 20,
                   ),
                   Card(
-                    // color: Colors.lightBlueAccent,
                     borderOnForeground: true,
                     shadowColor: Colors.blueGrey,
                     child: Column(
@@ -198,7 +194,7 @@ class _ViewIRState extends State<ViewIR> {
                         Row(
                           children: <Widget>[
                             Text(
-                              singleIR.remarks,
+                              singleIR.section,
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                   fontSize: 17, fontWeight: FontWeight.w300),
@@ -211,8 +207,46 @@ class _ViewIRState extends State<ViewIR> {
                   SizedBox(
                     height: 20,
                   ),
+                   Card(
+                    borderOnForeground: true,
+                    shadowColor: Colors.blueGrey,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              'Amount if Stolen Propert',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
+                        Divider(
+                          color: Colors.black38,
+                          endIndent: 0.5,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              singleIR.ifStolenproperty,
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w300),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                
+                  SizedBox(
+                    height: 20,
+                  ),
                   Card(
-                    // color: Colors.lightBlueAccent,
                     borderOnForeground: true,
                     shadowColor: Colors.blueGrey,
                     child: Column(
@@ -252,7 +286,6 @@ class _ViewIRState extends State<ViewIR> {
                     height: 20,
                   ),
                   Card(
-                      // color: Colors.lightBlueAccent,
                       borderOnForeground: true,
                       shadowColor: Colors.blueGrey,
                       child: Column(children: <Widget>[

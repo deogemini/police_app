@@ -75,6 +75,10 @@ class _ImageSendState extends State<ImageSend> {
               IconButton(
                   icon: Icon(Icons.photo_library),
                   onPressed: () => getImage(ImageSource.gallery)),
+              SizedBox(
+                width: 20,
+              ),
+              Text('Upload picture')
             ],
           ),
         ),

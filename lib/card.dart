@@ -29,10 +29,11 @@ class _CardsState extends State<Cards> {
       builder: (BuildContext context, caseState, child) {
         List<CaseDetails> data = caseState.caseDetailsLists;
         if (data.isEmpty) {
-          return Center(
+          return  Center(
             child: CircularProgressIndicator(
-              strokeWidth: 2,
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.amber),
+              strokeWidth: 3,
+              backgroundColor: Colors.blueAccent,
+              color: Colors.amber,
             ),
           );
         } else
@@ -66,9 +67,9 @@ class _CardsState extends State<Cards> {
                                   fontWeight: FontWeight.bold,
                                 )),
                             trailing: Text(
-                                data[index].immediateAction == null
+                                data[index].name == null
                                     ? 'Data Not Found'
-                                    : data[index].immediateAction,
+                                    : data[index].name,
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,

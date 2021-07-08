@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:police_app/model/investigationReport.dart';
 import 'package:police_app/model/case.dart';
+import 'package:police_app/service/InvestigationReport.dart';
 import 'package:police_app/service/caseService.dart';
 
 class CaseState extends ChangeNotifier {
@@ -34,5 +35,14 @@ class CaseState extends ChangeNotifier {
     _investigationReports =
         await CaseService().fetchIndividualData(caseDetails.id);
     notifyListeners();
+
+    _investigationReport = investigationsReports[0];
+    notifyListeners();
+  }
+
+  currentInvestigationReport(InvestigationReport investigationReport) {
+    _investigationReport = investigationReport;
+    notifyListeners();
+    InvestigationReportService().updateInvestigationReport(investigationReport);
   }
 }
